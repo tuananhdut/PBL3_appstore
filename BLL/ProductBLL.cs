@@ -9,25 +9,15 @@ namespace BLL
 {
     public class ProductBLL
     {
-        private ProductDAL dal;
-        public static ProductBLL _intance;
-        public static ProductBLL Intance
+       public Product GetProductBLL()
+       {
+            return new Product();
+       }
+       public List<Product> GetListProduct()
         {
-            get
-            {
-                if (_intance == null)
-                {
-                    new ProductBLL();
-                }
-                return _intance;
-            }
-            private set { }
-        }
-        public ProductBLL()
-        {
-            dal = new ProductDAL();
-        }
-
-        public List<Product> getALLProduct() => dal.getALLProduct();
+            List<Product> list = new List<Product>();
+            list = ProductDAL.Intance.getProducts();
+            return list;
+        }   
     }
 }

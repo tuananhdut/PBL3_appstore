@@ -28,3 +28,33 @@ C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PB
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.Hang.resources
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FTheLoai.resources
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\GiaoDien\obj\Debug\GiaoDien.FdoiMK.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\GiaoDien.exe.config
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\GiaoDien.exe
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\GiaoDien.pdb
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\BLL.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\DAL.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\BLL.pdb
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\BLL.dll.config
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\DAL.pdb
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\DAL.dll.config
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.xml
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FdoiMK.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FBaoCao.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FDoanhMuc.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FHoaDon.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.Fmain.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.Flogin.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FQuanLyTaiKhoan.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FTheLoai.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.FTimKiem.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.Hang.resources
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GUI.csproj.CopyComplete
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.exe
+D:\Code VS\codenet\PBL3\PBL3_appstore\GiaoDien\obj\Debug\GiaoDien.pdb
