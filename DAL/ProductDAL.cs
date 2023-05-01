@@ -10,7 +10,7 @@ namespace DAL
     public class ProductDAL
     {
         AppStore db;
-        public static ProductDAL _intance;
+        private static ProductDAL _intance;
         public static ProductDAL Intance
         {
             get
