@@ -13,18 +13,3 @@ C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PB
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\DAL.pdb
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\DAL.dll.config
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\BLL\bin\Debug\BLL.dll.config
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\BLL.dll.config
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\BLL.dll
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\BLL.pdb
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\DAL.dll
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\EntityFramework.dll
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\EntityFramework.SqlServer.dll
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\DAL.pdb
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\DAL.dll.config
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\EntityFramework.xml
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\bin\Debug\EntityFramework.SqlServer.xml
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\obj\Debug\BLL.csproj.CopyComplete
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\obj\Debug\BLL.dll
-D:\Code VS\codenet\PBL3\PBL3_appstore\BLL\obj\Debug\BLL.pdb

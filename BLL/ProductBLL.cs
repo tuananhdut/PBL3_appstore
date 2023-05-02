@@ -9,26 +9,25 @@ namespace BLL
 {
     public class ProductBLL
     {
-        public Product GetProductBLL(int ID)
+        private ProductDAL dal;
+        public static ProductBLL _intance;
+        public static ProductBLL Intance
         {
-            Product results = new Product();
-            results = ProductDAL.Intance.getProductByID(ID);
-            return results;
+            get
+            {
+                if (_intance == null)
+                {
+                    new ProductBLL();
+                }
+                return _intance;
+            }
+            private set { }
         }
-        public List<Product> GetProductsBLL()
+        public ProductBLL()
         {
-            List<Product> list = new List<Product>();
-            list = ProductDAL.Intance.getProducts();
-            return list;
+            dal = new ProductDAL();
         }
-        public void AddOrUpdateBLL(Product p)
-        {
-            ProductDAL.Intance.updateAndAddProduct(p);
-        }
-        public void DeleteBLL(Product p)
-        {
-            ProductDAL.Intance.deleteProduct(p);
-        }
-        
+
+        public List<Product> getALLProduct() => dal.getALLProduct();
     }
 }

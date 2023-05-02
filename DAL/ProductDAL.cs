@@ -10,7 +10,7 @@ namespace DAL
     public class ProductDAL
     {
         AppStore db;
-        private static ProductDAL _intance;
+        public static ProductDAL _intance;
         public static ProductDAL Intance
         {
             get
@@ -28,17 +28,17 @@ namespace DAL
             db = new AppStore();
         }
 
-        
+        public List<Product> getALLProduct()
+        {
+           
+                return db.Products.ToList();  
+  
+        }
         public Product getProductByID(int id)
         {
                return db.Products.Where(p => p.ProductID == id).FirstOrDefault();
         }
-        public List<Product> getProducts() 
-        {
-            List<Product> result = new List<Product>();
-            result = db.Products.ToList();
-            return result;
-        }
+        
         public void updateAndAddProduct(Product p)
         {
             db.Products.AddOrUpdate(p);
