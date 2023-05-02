@@ -10,3 +10,15 @@ C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PB
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.dll
 C:\Users\tuanh\OneDrive\Máy tính\Asp.net core\testMvcAsp\WebAspNetFramework\PBL3\GiaoDien\DAL\obj\Debug\DAL.pdb
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\bin\Debug\DAL.dll.config
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\bin\Debug\DAL.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\bin\Debug\DAL.pdb
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\bin\Debug\EntityFramework.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\bin\Debug\EntityFramework.xml
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\obj\Debug\DAL.dll
+D:\Code VS\codenet\PBL3\PBL3_appstore\DAL\obj\Debug\DAL.pdb
