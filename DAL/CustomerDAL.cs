@@ -29,24 +29,32 @@ namespace DAL
             db = new AppStore();
         }
         //tạo mới khách hàng
-        public bool AddCustomer(Customer KH)
+        public bool addAndUpdateCustomer(Customer KH)
         {
            
             db.Customers.AddOrUpdate(KH);
-                db.SaveChanges();
-                return true;
+            db.SaveChanges();
+            return true;
           
         }
 
         //lấy all khách hàng
         public List<Customer> getALLCustomer() => db.Customers.ToList();
 
-        //lấy khách hàng theo phone, fullname, address
-        public Customer GetCustomerByPhoneAndNameAndAddred
-            (string Phone, string name, string address)
+       //xóa khách hàng theo id
+        public bool removeCustomer(int id)
         {
-            return db.Customers
-                .FirstOrDefault(p => p.PhoneNumber == Phone && p.FullName == name && p.Address == address);
+            try
+            {
+                Customer kh = db.Customers.Where(p => p.CustomerID == id).FirstOrDefault();
+                db.Customers.Remove(kh);
+                db.SaveChanges();
+                return true;
+            } catch(Exception)
+            {
+                return false;
+            }
+            
         }
     }
 }

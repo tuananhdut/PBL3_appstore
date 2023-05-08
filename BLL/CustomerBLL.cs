@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -31,17 +32,12 @@ namespace BLL
         // lấy danh sách customer 
         public List<Customer> getALLCustomer() => dal.getALLCustomer();
 
-
-        //kiểm tra người dùng đã tồn tại chưa (phone, name, address)
-        public Customer GetCustomerByPhoneAndNameAndAddred(string Phone, string name, string address)
-        => dal.GetCustomerByPhoneAndNameAndAddred(Phone, name, address);
-
-
         // thêm khách hàng
-        public bool addCustomer(Customer kh)
-        {
-            return dal.AddCustomer(kh);
-        }
+        public bool addAndUpdateCustomer(Customer kh) => dal.addAndUpdateCustomer(kh);
+
+        // xóa khách hàng
+        public bool removeCustomer(int id) => dal.removeCustomer(id);
+
 
     }
 }

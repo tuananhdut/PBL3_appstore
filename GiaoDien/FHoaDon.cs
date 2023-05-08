@@ -120,7 +120,7 @@ namespace GiaoDien
                     };
                     //add customer
                     CustomerBLL bll = new CustomerBLL();
-                    bll.addCustomer(kh);
+                    bll.addAndUpdateCustomer(kh);
                     // gán customerId Cho cbb CustomerID
                     cbbCustomerID.Text = kh.CustomerID.ToString();
                 }

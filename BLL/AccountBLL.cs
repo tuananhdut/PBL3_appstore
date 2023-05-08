@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -54,6 +55,16 @@ namespace BLL
         {
             AccountDAL db = new AccountDAL();
             return db.getALLAccount();
+        }
+        public void updateAndAddAccount(Account account)
+        {
+            AccountDAL db = new AccountDAL();
+            db.updateAndAddAccount(account);
+        }
+        public void removeAccountByID(int id)
+        {
+            AccountDAL db = new AccountDAL();
+            db.removeAccountByID(id);
         }
     }
 }

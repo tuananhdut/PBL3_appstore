@@ -8,8 +8,8 @@ namespace BLL
 {
     public enum Authorization
     {
-        Admin,
-        User,
-        AccountDelete
+        Admin,// tài khoản quản lý
+        User,// tài khoản nhân viên
+        trash// tài khoản khóa 
     }
 }

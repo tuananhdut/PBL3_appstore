@@ -68,7 +68,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btShowKH = new System.Windows.Forms.Button();
             this.btExitKH = new System.Windows.Forms.Button();
             this.btDelete_KH = new System.Windows.Forms.Button();
             this.btEdit_Kh = new System.Windows.Forms.Button();
@@ -79,37 +78,31 @@
             this.tbSDT_KH = new System.Windows.Forms.TextBox();
             this.tbAddress_KH = new System.Windows.Forms.TextBox();
             this.tbCustomerName_KH = new System.Windows.Forms.TextBox();
-            this.rdbG_KH = new System.Windows.Forms.RadioButton();
-            this.rdbBoy_KH = new System.Windows.Forms.RadioButton();
             this.tbCustomerID_KH = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btShowNV = new System.Windows.Forms.Button();
+            this.btExitNV = new System.Windows.Forms.Button();
+            this.btDeleteNV = new System.Windows.Forms.Button();
+            this.btEditNV = new System.Windows.Forms.Button();
+            this.btSaveNV = new System.Windows.Forms.Button();
+            this.btAdd_NV = new System.Windows.Forms.Button();
+            this.dtgv_NV = new System.Windows.Forms.DataGridView();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbUsenameNV = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbPhoneNumber_NV = new System.Windows.Forms.TextBox();
+            this.tbAddress_NV = new System.Windows.Forms.TextBox();
+            this.tbFullname_NV = new System.Windows.Forms.TextBox();
+            this.tbEmployeeID_NV = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -123,7 +116,7 @@
             this.groupBox4.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_NV)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -519,7 +512,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btShowKH);
             this.groupBox5.Controls.Add(this.btExitKH);
             this.groupBox5.Controls.Add(this.btDelete_KH);
             this.groupBox5.Controls.Add(this.btEdit_Kh);
@@ -532,15 +524,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tác Vụ";
             // 
-            // btShowKH
-            // 
-            this.btShowKH.Location = new System.Drawing.Point(975, 33);
-            this.btShowKH.Name = "btShowKH";
-            this.btShowKH.Size = new System.Drawing.Size(117, 50);
-            this.btShowKH.TabIndex = 5;
-            this.btShowKH.Text = "Hiển Thị DS";
-            this.btShowKH.UseVisualStyleBackColor = true;
-            // 
             // btExitKH
             // 
             this.btExitKH.Location = new System.Drawing.Point(773, 33);
@@ -549,6 +532,7 @@
             this.btExitKH.TabIndex = 4;
             this.btExitKH.Text = "Bỏ Qua";
             this.btExitKH.UseVisualStyleBackColor = true;
+            this.btExitKH.Click += new System.EventHandler(this.btExitKH_Click);
             // 
             // btDelete_KH
             // 
@@ -558,6 +542,7 @@
             this.btDelete_KH.TabIndex = 3;
             this.btDelete_KH.Text = "Xóa";
             this.btDelete_KH.UseVisualStyleBackColor = true;
+            this.btDelete_KH.Click += new System.EventHandler(this.btDelete_KH_Click);
             // 
             // btEdit_Kh
             // 
@@ -567,15 +552,18 @@
             this.btEdit_Kh.TabIndex = 2;
             this.btEdit_Kh.Text = "Sửa";
             this.btEdit_Kh.UseVisualStyleBackColor = true;
+            this.btEdit_Kh.Click += new System.EventHandler(this.btEdit_Kh_Click);
             // 
             // btSave_Kh
             // 
+            this.btSave_Kh.Enabled = false;
             this.btSave_Kh.Location = new System.Drawing.Point(180, 33);
             this.btSave_Kh.Name = "btSave_Kh";
             this.btSave_Kh.Size = new System.Drawing.Size(117, 50);
             this.btSave_Kh.TabIndex = 1;
             this.btSave_Kh.Text = "Lưu";
             this.btSave_Kh.UseVisualStyleBackColor = true;
+            this.btSave_Kh.Click += new System.EventHandler(this.btSave_Kh_Click);
             // 
             // btAddKH
             // 
@@ -594,6 +582,7 @@
             this.dtgv_KH.Name = "dtgv_KH";
             this.dtgv_KH.RowHeadersWidth = 51;
             this.dtgv_KH.RowTemplate.Height = 24;
+            this.dtgv_KH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_KH.Size = new System.Drawing.Size(1158, 226);
             this.dtgv_KH.TabIndex = 1;
             // 
@@ -602,13 +591,10 @@
             this.groupBox4.Controls.Add(this.tbSDT_KH);
             this.groupBox4.Controls.Add(this.tbAddress_KH);
             this.groupBox4.Controls.Add(this.tbCustomerName_KH);
-            this.groupBox4.Controls.Add(this.rdbG_KH);
-            this.groupBox4.Controls.Add(this.rdbBoy_KH);
             this.groupBox4.Controls.Add(this.tbCustomerID_KH);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(15, 20);
@@ -620,59 +606,45 @@
             // 
             // tbSDT_KH
             // 
-            this.tbSDT_KH.Location = new System.Drawing.Point(195, 151);
+            this.tbSDT_KH.Enabled = false;
+            this.tbSDT_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSDT_KH.Location = new System.Drawing.Point(195, 104);
             this.tbSDT_KH.Name = "tbSDT_KH";
-            this.tbSDT_KH.Size = new System.Drawing.Size(173, 27);
+            this.tbSDT_KH.Size = new System.Drawing.Size(249, 27);
             this.tbSDT_KH.TabIndex = 11;
             // 
             // tbAddress_KH
             // 
-            this.tbAddress_KH.Location = new System.Drawing.Point(652, 104);
+            this.tbAddress_KH.Enabled = false;
+            this.tbAddress_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAddress_KH.Location = new System.Drawing.Point(773, 104);
             this.tbAddress_KH.Name = "tbAddress_KH";
-            this.tbAddress_KH.Size = new System.Drawing.Size(173, 27);
+            this.tbAddress_KH.Size = new System.Drawing.Size(268, 27);
             this.tbAddress_KH.TabIndex = 10;
             // 
             // tbCustomerName_KH
             // 
-            this.tbCustomerName_KH.Location = new System.Drawing.Point(652, 48);
+            this.tbCustomerName_KH.Enabled = false;
+            this.tbCustomerName_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustomerName_KH.Location = new System.Drawing.Point(773, 45);
             this.tbCustomerName_KH.Name = "tbCustomerName_KH";
-            this.tbCustomerName_KH.Size = new System.Drawing.Size(173, 27);
+            this.tbCustomerName_KH.Size = new System.Drawing.Size(268, 27);
             this.tbCustomerName_KH.TabIndex = 9;
-            // 
-            // rdbG_KH
-            // 
-            this.rdbG_KH.AutoSize = true;
-            this.rdbG_KH.Location = new System.Drawing.Point(287, 102);
-            this.rdbG_KH.Name = "rdbG_KH";
-            this.rdbG_KH.Size = new System.Drawing.Size(53, 24);
-            this.rdbG_KH.TabIndex = 7;
-            this.rdbG_KH.TabStop = true;
-            this.rdbG_KH.Text = "Nữ";
-            this.rdbG_KH.UseVisualStyleBackColor = true;
-            // 
-            // rdbBoy_KH
-            // 
-            this.rdbBoy_KH.AutoSize = true;
-            this.rdbBoy_KH.Location = new System.Drawing.Point(195, 102);
-            this.rdbBoy_KH.Name = "rdbBoy_KH";
-            this.rdbBoy_KH.Size = new System.Drawing.Size(68, 24);
-            this.rdbBoy_KH.TabIndex = 6;
-            this.rdbBoy_KH.TabStop = true;
-            this.rdbBoy_KH.Text = "Nam";
-            this.rdbBoy_KH.UseVisualStyleBackColor = true;
             // 
             // tbCustomerID_KH
             // 
-            this.tbCustomerID_KH.Location = new System.Drawing.Point(195, 48);
+            this.tbCustomerID_KH.Enabled = false;
+            this.tbCustomerID_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCustomerID_KH.Location = new System.Drawing.Point(195, 45);
             this.tbCustomerID_KH.Name = "tbCustomerID_KH";
-            this.tbCustomerID_KH.Size = new System.Drawing.Size(173, 27);
+            this.tbCustomerID_KH.Size = new System.Drawing.Size(249, 27);
             this.tbCustomerID_KH.TabIndex = 5;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label14.Location = new System.Drawing.Point(478, 102);
+            this.label14.Location = new System.Drawing.Point(599, 110);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(49, 16);
             this.label14.TabIndex = 4;
@@ -682,7 +654,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label13.Location = new System.Drawing.Point(478, 59);
+            this.label13.Location = new System.Drawing.Point(599, 56);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(107, 16);
             this.label13.TabIndex = 3;
@@ -692,21 +664,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label12.Location = new System.Drawing.Point(40, 151);
+            this.label12.Location = new System.Drawing.Point(40, 110);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(34, 16);
             this.label12.TabIndex = 2;
             this.label12.Text = "SĐT";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label4.Location = new System.Drawing.Point(40, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Giới tính";
             // 
             // label3
             // 
@@ -722,7 +684,7 @@
             // 
             this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.groupBox7);
-            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.Controls.Add(this.dtgv_NV);
             this.tabPage4.Controls.Add(this.groupBox6);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
@@ -743,12 +705,12 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button14);
-            this.groupBox7.Controls.Add(this.button15);
-            this.groupBox7.Controls.Add(this.button16);
-            this.groupBox7.Controls.Add(this.button17);
-            this.groupBox7.Controls.Add(this.button18);
-            this.groupBox7.Controls.Add(this.button19);
+            this.groupBox7.Controls.Add(this.btShowNV);
+            this.groupBox7.Controls.Add(this.btExitNV);
+            this.groupBox7.Controls.Add(this.btDeleteNV);
+            this.groupBox7.Controls.Add(this.btEditNV);
+            this.groupBox7.Controls.Add(this.btSaveNV);
+            this.groupBox7.Controls.Add(this.btAdd_NV);
             this.groupBox7.Location = new System.Drawing.Point(15, 526);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(1130, 108);
@@ -756,84 +718,88 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Tác Vụ";
             // 
-            // button14
+            // btShowNV
             // 
-            this.button14.Location = new System.Drawing.Point(975, 33);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(117, 50);
-            this.button14.TabIndex = 5;
-            this.button14.Text = "Hiển Thị DS";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btShowNV.Location = new System.Drawing.Point(975, 33);
+            this.btShowNV.Name = "btShowNV";
+            this.btShowNV.Size = new System.Drawing.Size(117, 50);
+            this.btShowNV.TabIndex = 5;
+            this.btShowNV.Text = "Hiển Thị DS";
+            this.btShowNV.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // btExitNV
             // 
-            this.button15.Location = new System.Drawing.Point(773, 33);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(117, 50);
-            this.button15.TabIndex = 4;
-            this.button15.Text = "Bỏ Qua";
-            this.button15.UseVisualStyleBackColor = true;
+            this.btExitNV.Location = new System.Drawing.Point(773, 33);
+            this.btExitNV.Name = "btExitNV";
+            this.btExitNV.Size = new System.Drawing.Size(117, 50);
+            this.btExitNV.TabIndex = 4;
+            this.btExitNV.Text = "Bỏ Qua";
+            this.btExitNV.UseVisualStyleBackColor = true;
+            this.btExitNV.Click += new System.EventHandler(this.btExitNV_Click);
             // 
-            // button16
+            // btDeleteNV
             // 
-            this.button16.Location = new System.Drawing.Point(578, 33);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(117, 50);
-            this.button16.TabIndex = 3;
-            this.button16.Text = "Xóa";
-            this.button16.UseVisualStyleBackColor = true;
+            this.btDeleteNV.Location = new System.Drawing.Point(578, 33);
+            this.btDeleteNV.Name = "btDeleteNV";
+            this.btDeleteNV.Size = new System.Drawing.Size(117, 50);
+            this.btDeleteNV.TabIndex = 3;
+            this.btDeleteNV.Text = "Xóa";
+            this.btDeleteNV.UseVisualStyleBackColor = true;
+            this.btDeleteNV.Click += new System.EventHandler(this.btDeleteNV_Click);
             // 
-            // button17
+            // btEditNV
             // 
-            this.button17.Location = new System.Drawing.Point(366, 33);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(117, 50);
-            this.button17.TabIndex = 2;
-            this.button17.Text = "Sửa";
-            this.button17.UseVisualStyleBackColor = true;
+            this.btEditNV.Location = new System.Drawing.Point(366, 33);
+            this.btEditNV.Name = "btEditNV";
+            this.btEditNV.Size = new System.Drawing.Size(117, 50);
+            this.btEditNV.TabIndex = 2;
+            this.btEditNV.Text = "Sửa";
+            this.btEditNV.UseVisualStyleBackColor = true;
+            this.btEditNV.Click += new System.EventHandler(this.btEditNV_Click);
             // 
-            // button18
+            // btSaveNV
             // 
-            this.button18.Location = new System.Drawing.Point(180, 33);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(117, 50);
-            this.button18.TabIndex = 1;
-            this.button18.Text = "Lưu";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btSaveNV.Enabled = false;
+            this.btSaveNV.Location = new System.Drawing.Point(180, 33);
+            this.btSaveNV.Name = "btSaveNV";
+            this.btSaveNV.Size = new System.Drawing.Size(117, 50);
+            this.btSaveNV.TabIndex = 1;
+            this.btSaveNV.Text = "Lưu";
+            this.btSaveNV.UseVisualStyleBackColor = true;
+            this.btSaveNV.Click += new System.EventHandler(this.btSaveNV_Click);
             // 
-            // button19
+            // btAdd_NV
             // 
-            this.button19.Location = new System.Drawing.Point(10, 33);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(117, 50);
-            this.button19.TabIndex = 0;
-            this.button19.Text = "Thêm";
-            this.button19.UseVisualStyleBackColor = true;
+            this.btAdd_NV.Location = new System.Drawing.Point(10, 33);
+            this.btAdd_NV.Name = "btAdd_NV";
+            this.btAdd_NV.Size = new System.Drawing.Size(117, 50);
+            this.btAdd_NV.TabIndex = 0;
+            this.btAdd_NV.Text = "Thêm";
+            this.btAdd_NV.UseVisualStyleBackColor = true;
+            this.btAdd_NV.Click += new System.EventHandler(this.btAdd_NV_Click);
             // 
-            // dataGridView3
+            // dtgv_NV
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(15, 285);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(1158, 226);
-            this.dataGridView3.TabIndex = 6;
+            this.dtgv_NV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_NV.Location = new System.Drawing.Point(15, 285);
+            this.dtgv_NV.Name = "dtgv_NV";
+            this.dtgv_NV.RowHeadersWidth = 51;
+            this.dtgv_NV.RowTemplate.Height = 24;
+            this.dtgv_NV.Size = new System.Drawing.Size(1158, 226);
+            this.dtgv_NV.TabIndex = 6;
+            this.dtgv_NV.SelectionChanged += new System.EventHandler(this.dtgv_NV_SelectionChanged);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.maskedTextBox3);
-            this.groupBox6.Controls.Add(this.label21);
-            this.groupBox6.Controls.Add(this.textBox4);
-            this.groupBox6.Controls.Add(this.textBox5);
-            this.groupBox6.Controls.Add(this.maskedTextBox2);
-            this.groupBox6.Controls.Add(this.radioButton3);
-            this.groupBox6.Controls.Add(this.radioButton4);
-            this.groupBox6.Controls.Add(this.textBox6);
+            this.groupBox6.Controls.Add(this.tbUsenameNV);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.tbPhoneNumber_NV);
+            this.groupBox6.Controls.Add(this.tbAddress_NV);
+            this.groupBox6.Controls.Add(this.tbFullname_NV);
+            this.groupBox6.Controls.Add(this.tbEmployeeID_NV);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label17);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.label19);
             this.groupBox6.Controls.Add(this.label20);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(15, 19);
@@ -841,80 +807,63 @@
             this.groupBox6.Size = new System.Drawing.Size(1158, 220);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Thông Tin Khách Hàng";
+            this.groupBox6.Text = "Thông Tin Nhân Viên ";
             // 
-            // maskedTextBox3
+            // tbUsenameNV
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(654, 101);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(171, 27);
-            this.maskedTextBox3.TabIndex = 12;
+            this.tbUsenameNV.Enabled = false;
+            this.tbUsenameNV.Location = new System.Drawing.Point(195, 107);
+            this.tbUsenameNV.Name = "tbUsenameNV";
+            this.tbUsenameNV.Size = new System.Drawing.Size(173, 27);
+            this.tbUsenameNV.TabIndex = 15;
             // 
-            // label21
+            // label4
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label21.Location = new System.Drawing.Point(478, 110);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(69, 16);
-            this.label21.TabIndex = 11;
-            this.label21.Text = "Ngày Sinh";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.label4.Location = new System.Drawing.Point(40, 107);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 16);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Tên Đăng Nhập";
             // 
-            // textBox4
+            // tbPhoneNumber_NV
             // 
-            this.textBox4.Location = new System.Drawing.Point(652, 151);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(173, 27);
-            this.textBox4.TabIndex = 10;
+            this.tbPhoneNumber_NV.Enabled = false;
+            this.tbPhoneNumber_NV.Location = new System.Drawing.Point(195, 159);
+            this.tbPhoneNumber_NV.Name = "tbPhoneNumber_NV";
+            this.tbPhoneNumber_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbPhoneNumber_NV.TabIndex = 13;
             // 
-            // textBox5
+            // tbAddress_NV
             // 
-            this.textBox5.Location = new System.Drawing.Point(652, 48);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(173, 27);
-            this.textBox5.TabIndex = 9;
+            this.tbAddress_NV.Enabled = false;
+            this.tbAddress_NV.Location = new System.Drawing.Point(652, 107);
+            this.tbAddress_NV.Name = "tbAddress_NV";
+            this.tbAddress_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbAddress_NV.TabIndex = 10;
             // 
-            // maskedTextBox2
+            // tbFullname_NV
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(195, 151);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(173, 27);
-            this.maskedTextBox2.TabIndex = 8;
+            this.tbFullname_NV.Enabled = false;
+            this.tbFullname_NV.Location = new System.Drawing.Point(652, 48);
+            this.tbFullname_NV.Name = "tbFullname_NV";
+            this.tbFullname_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbFullname_NV.TabIndex = 9;
             // 
-            // radioButton3
+            // tbEmployeeID_NV
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(287, 102);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(53, 24);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Nữ";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(195, 102);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(68, 24);
-            this.radioButton4.TabIndex = 6;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Nam";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(195, 48);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(173, 27);
-            this.textBox6.TabIndex = 5;
+            this.tbEmployeeID_NV.Enabled = false;
+            this.tbEmployeeID_NV.Location = new System.Drawing.Point(195, 48);
+            this.tbEmployeeID_NV.Name = "tbEmployeeID_NV";
+            this.tbEmployeeID_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbEmployeeID_NV.TabIndex = 5;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label16.Location = new System.Drawing.Point(478, 157);
+            this.label16.Location = new System.Drawing.Point(478, 118);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(49, 16);
             this.label16.TabIndex = 4;
@@ -934,21 +883,11 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label18.Location = new System.Drawing.Point(40, 151);
+            this.label18.Location = new System.Drawing.Point(40, 170);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(34, 16);
             this.label18.TabIndex = 2;
             this.label18.Text = "SĐT";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label19.Location = new System.Drawing.Point(40, 102);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(54, 16);
-            this.label19.TabIndex = 1;
-            this.label19.Text = "Giới tính";
             // 
             // label20
             // 
@@ -985,7 +924,7 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_NV)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
@@ -1026,7 +965,6 @@
         private System.Windows.Forms.ComboBox cbbCategory_DT;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button btShowKH;
         private System.Windows.Forms.Button btExitKH;
         private System.Windows.Forms.Button btDelete_KH;
         private System.Windows.Forms.Button btEdit_Kh;
@@ -1037,36 +975,27 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbAddress_KH;
         private System.Windows.Forms.TextBox tbCustomerName_KH;
-        private System.Windows.Forms.RadioButton rdbG_KH;
-        private System.Windows.Forms.RadioButton rdbBoy_KH;
         private System.Windows.Forms.TextBox tbCustomerID_KH;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbAddress_NV;
+        private System.Windows.Forms.TextBox tbFullname_NV;
+        private System.Windows.Forms.TextBox tbEmployeeID_NV;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button btShowNV;
+        private System.Windows.Forms.Button btExitNV;
+        private System.Windows.Forms.Button btDeleteNV;
+        private System.Windows.Forms.Button btEditNV;
+        private System.Windows.Forms.Button btSaveNV;
+        private System.Windows.Forms.Button btAdd_NV;
+        private System.Windows.Forms.DataGridView dtgv_NV;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox tbManufacturer_DT;
@@ -1077,5 +1006,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tbPhoneNumber_NV;
+        private System.Windows.Forms.TextBox tbUsenameNV;
+        private System.Windows.Forms.Label label4;
     }
 }
