@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +22,9 @@ namespace GiaoDien
             InitializeComponent();
             this.PhanQuyen = PhanQuyen;
             setFormByAuthorization();
-            CustomerBLL customerBLL = new CustomerBLL();
-            dtgv_KH.DataSource = customerBLL.getALLCustomer();
-            AccountBLL accountBLL = new AccountBLL();
-            dtgv_NV.DataSource = accountBLL.getALLAcount();
+            loangDTGVCustomer();
+            loangDTGVAccount();
+          
         }
         private void setFormByAuthorization()
         {
@@ -40,7 +40,25 @@ namespace GiaoDien
             }
         }
 
+        private void loangDTGVAccount()
+        {
+            dtgv_NV.Rows.Clear();
+            AccountBLL accountBLL = new AccountBLL();
+            foreach (var row in accountBLL.getALLAcount())
+            {
+                dtgv_NV.Rows.Add(row.AccountID,row.FullName,(Authorization)row.Position,row.PhoneNumber,row.Address);
+            }
+        }
 
+        private void loangDTGVCustomer()
+        {
+            dtgv_KH.Rows.Clear();
+            CustomerBLL customerBLL = new CustomerBLL();
+            foreach (var customer in customerBLL.getALLCustomer())
+            {
+                dtgv_KH.Rows.Add(customer.CustomerID, customer.FullName, customer.PhoneNumber, customer.Address);
+            }
+        }
         private void KhoaThongTinDT()
         {
             cbbCategory_DT.Enabled = false;
@@ -190,8 +208,7 @@ namespace GiaoDien
             btAddKH.Enabled = true;
 
             //cập nhật lại danh sách
-            CustomerBLL bll1 = new CustomerBLL();
-            dtgv_KH.DataSource = bll1.getALLCustomer();
+            loangDTGVCustomer();
 
             // khóa hành động lưu 
             btSave_Kh.Enabled = false;
@@ -199,17 +216,19 @@ namespace GiaoDien
 
         private void btEdit_Kh_Click(object sender, EventArgs e)
         {
-            // mở button save 
-            btSave_Kh.Enabled = true;
-
-            //kiểm tra đã chọn và đưa lên các textbox
             if (dtgv_KH.SelectedRows.Count == 1)
             {
-                DataGridViewRow row = dtgv_KH.SelectedRows[0];
-                tbCustomerName_KH.Text = row.Cells[3].Value.ToString();
-                tbCustomerID_KH.Text = row.Cells[0].Value.ToString();
-                tbAddress_KH.Text = row.Cells[4].Value.ToString();
-                tbSDT_KH.Text = row.Cells[2].Value.ToString();
+                // mở button save 
+                btSave_Kh.Enabled = true;
+
+                // xử lý
+                int id = Convert.ToInt32(dtgv_KH.SelectedRows[0].Cells[0].Value);
+                CustomerBLL customerBLL = new CustomerBLL();
+                Customer customer = customerBLL.getCustomerByID(id);
+                tbCustomerName_KH.Text = customer.FullName;
+                tbCustomerID_KH.Text = customer.CustomerID.ToString();
+                tbAddress_KH.Text = customer.Address;
+                tbSDT_KH.Text = customer.PhoneNumber;
 
             }
             else
@@ -246,7 +265,7 @@ namespace GiaoDien
                 DataGridViewRow row = dtgv_KH.SelectedRows[0];
                 CustomerBLL bll = new CustomerBLL();
                 bll.removeCustomer(Convert.ToInt32(row.Cells[0].Value));
-                dtgv_KH.DataSource = bll.getALLCustomer();
+                loangDTGVCustomer();
             }
             else
             {
@@ -336,7 +355,7 @@ namespace GiaoDien
                     AccountBLL accountBLL = new AccountBLL();
                     accountBLL.updateAndAddAccount(account);
                     tbEmployeeID_NV.Text = account.AccountID.ToString();
-                    dtgv_NV.DataSource = accountBLL.getALLAcount();
+                    loangDTGVAccount();
                 }
                 catch (Exception)
                 {
@@ -347,26 +366,28 @@ namespace GiaoDien
 
         private void btEditNV_Click(object sender, EventArgs e)
         {
-            // mở khóa các tb thông tin khách hàng
-            UnlockingEmployeeInformation();
-
-            //khóa chức năng khác
-            btDeleteNV.Enabled = false;
-            btShowNV.Enabled = false;
-            btAdd_NV.Enabled = false;
-
-            // mở khóa bt save
-            btSaveNV.Enabled = true;
-
-            // xử lý   
             if (dtgv_NV.SelectedRows.Count == 1)
             {
-                DataGridViewRow row = dtgv_NV.SelectedRows[0];
-                tbEmployeeID_NV.Text = row.Cells[0].Value.ToString();
-                tbFullname_NV.Text = row.Cells[6].Value.ToString();
-                tbPhoneNumber_NV.Text = row.Cells[5].Value.ToString();
-                tbAddress_NV.Text = row.Cells[7].Value.ToString();
-                tbUsenameNV.Text = row.Cells[2].Value.ToString();
+                // mở khóa các tb thông tin khách hàng
+                UnlockingEmployeeInformation();
+
+                //khóa chức năng khác
+                btDeleteNV.Enabled = false;
+                btShowNV.Enabled = false;
+                btAdd_NV.Enabled = false;
+
+                // mở khóa bt save
+                btSaveNV.Enabled = true;
+
+                // xử lý   
+                int id = Convert.ToInt32(dtgv_NV.SelectedRows[0].Cells[0].Value);
+                AccountBLL accountBLL = new AccountBLL();
+                Account acc = accountBLL.GetAccountByID(id);
+                tbEmployeeID_NV.Text = acc.AccountID.ToString();
+                tbFullname_NV.Text = acc.FullName.ToString();
+                tbPhoneNumber_NV.Text =acc.PhoneNumber;
+                tbAddress_NV.Text = acc.Address;
+                tbUsenameNV.Text = acc.Username;
 
             }
             else
@@ -401,7 +422,7 @@ namespace GiaoDien
                 int id = Convert.ToInt32(row.Cells[0].Value.ToString());
                 AccountBLL accountBll = new AccountBLL();
                 accountBll.removeAccountByID(id);
-                dtgv_NV.DataSource = accountBll.getALLAcount();
+                loangDTGVAccount();
             }
             else
             {
@@ -411,16 +432,19 @@ namespace GiaoDien
 
       
 
-        private void dtgv_NV_SelectionChanged(object sender, EventArgs e)
+        private void tbPhoneNumber_NV_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (dtgv_NV.SelectedRows.Count == 1)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                DataGridViewRow row = dtgv_NV.SelectedRows[0];
-                tbEmployeeID_NV.Text = row.Cells[0].Value.ToString();
-                tbFullname_NV.Text = row.Cells[6].Value.ToString();
-                tbPhoneNumber_NV.Text = row.Cells[5].Value.ToString();
-                tbAddress_NV.Text = row.Cells[7].Value.ToString();
-                tbUsenameNV.Text = row.Cells[2].Value.ToString();
+                MessageBox.Show("vui lòng nhập số");
+            }
+        }
+
+        private void tbSDT_KH_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("vui lòng nhập số");
             }
         }
     }

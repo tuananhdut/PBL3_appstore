@@ -74,6 +74,10 @@
             this.btSave_Kh = new System.Windows.Forms.Button();
             this.btAddKH = new System.Windows.Forms.Button();
             this.dtgv_KH = new System.Windows.Forms.DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tbSDT_KH = new System.Windows.Forms.TextBox();
             this.tbAddress_KH = new System.Windows.Forms.TextBox();
@@ -93,6 +97,11 @@
             this.btSaveNV = new System.Windows.Forms.Button();
             this.btAdd_NV = new System.Windows.Forms.Button();
             this.dtgv_NV = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tbUsenameNV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -578,6 +587,11 @@
             // dtgv_KH
             // 
             this.dtgv_KH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_KH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column6,
+            this.Column8,
+            this.Column7,
+            this.Column9});
             this.dtgv_KH.Location = new System.Drawing.Point(15, 277);
             this.dtgv_KH.Name = "dtgv_KH";
             this.dtgv_KH.RowHeadersWidth = 51;
@@ -585,6 +599,34 @@
             this.dtgv_KH.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_KH.Size = new System.Drawing.Size(1158, 226);
             this.dtgv_KH.TabIndex = 1;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Mã Khách Hàng";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 150;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Họ Và Tên";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 170;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Số Điện Thoại ";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 170;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Địa Chỉ";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 325;
             // 
             // groupBox4
             // 
@@ -612,6 +654,7 @@
             this.tbSDT_KH.Name = "tbSDT_KH";
             this.tbSDT_KH.Size = new System.Drawing.Size(249, 27);
             this.tbSDT_KH.TabIndex = 11;
+            this.tbSDT_KH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSDT_KH_KeyPress);
             // 
             // tbAddress_KH
             // 
@@ -781,13 +824,54 @@
             // dtgv_NV
             // 
             this.dtgv_NV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_NV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
             this.dtgv_NV.Location = new System.Drawing.Point(15, 285);
             this.dtgv_NV.Name = "dtgv_NV";
             this.dtgv_NV.RowHeadersWidth = 51;
             this.dtgv_NV.RowTemplate.Height = 24;
+            this.dtgv_NV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgv_NV.Size = new System.Drawing.Size(1158, 226);
             this.dtgv_NV.TabIndex = 6;
-            this.dtgv_NV.SelectionChanged += new System.EventHandler(this.dtgv_NV_SelectionChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã Nhân Viên";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Hiển Thị";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 140;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Chức Vụ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 140;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số Điện Thoại";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 140;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Địa Chỉ";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 255;
             // 
             // groupBox6
             // 
@@ -812,9 +896,10 @@
             // tbUsenameNV
             // 
             this.tbUsenameNV.Enabled = false;
+            this.tbUsenameNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsenameNV.Location = new System.Drawing.Point(195, 107);
             this.tbUsenameNV.Name = "tbUsenameNV";
-            this.tbUsenameNV.Size = new System.Drawing.Size(173, 27);
+            this.tbUsenameNV.Size = new System.Drawing.Size(322, 27);
             this.tbUsenameNV.TabIndex = 15;
             // 
             // label4
@@ -830,40 +915,45 @@
             // tbPhoneNumber_NV
             // 
             this.tbPhoneNumber_NV.Enabled = false;
+            this.tbPhoneNumber_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbPhoneNumber_NV.Location = new System.Drawing.Point(195, 159);
             this.tbPhoneNumber_NV.Name = "tbPhoneNumber_NV";
-            this.tbPhoneNumber_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbPhoneNumber_NV.Size = new System.Drawing.Size(322, 27);
             this.tbPhoneNumber_NV.TabIndex = 13;
+            this.tbPhoneNumber_NV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPhoneNumber_NV_KeyPress);
             // 
             // tbAddress_NV
             // 
             this.tbAddress_NV.Enabled = false;
-            this.tbAddress_NV.Location = new System.Drawing.Point(652, 107);
+            this.tbAddress_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAddress_NV.Location = new System.Drawing.Point(808, 107);
             this.tbAddress_NV.Name = "tbAddress_NV";
-            this.tbAddress_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbAddress_NV.Size = new System.Drawing.Size(322, 27);
             this.tbAddress_NV.TabIndex = 10;
             // 
             // tbFullname_NV
             // 
             this.tbFullname_NV.Enabled = false;
-            this.tbFullname_NV.Location = new System.Drawing.Point(652, 48);
+            this.tbFullname_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFullname_NV.Location = new System.Drawing.Point(808, 48);
             this.tbFullname_NV.Name = "tbFullname_NV";
-            this.tbFullname_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbFullname_NV.Size = new System.Drawing.Size(322, 27);
             this.tbFullname_NV.TabIndex = 9;
             // 
             // tbEmployeeID_NV
             // 
             this.tbEmployeeID_NV.Enabled = false;
+            this.tbEmployeeID_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmployeeID_NV.Location = new System.Drawing.Point(195, 48);
             this.tbEmployeeID_NV.Name = "tbEmployeeID_NV";
-            this.tbEmployeeID_NV.Size = new System.Drawing.Size(173, 27);
+            this.tbEmployeeID_NV.Size = new System.Drawing.Size(322, 27);
             this.tbEmployeeID_NV.TabIndex = 5;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label16.Location = new System.Drawing.Point(478, 118);
+            this.label16.Location = new System.Drawing.Point(649, 118);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(49, 16);
             this.label16.TabIndex = 4;
@@ -873,7 +963,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.label17.Location = new System.Drawing.Point(478, 59);
+            this.label17.Location = new System.Drawing.Point(649, 54);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(96, 16);
             this.label17.TabIndex = 3;
@@ -1009,5 +1099,14 @@
         private System.Windows.Forms.TextBox tbPhoneNumber_NV;
         private System.Windows.Forms.TextBox tbUsenameNV;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
     }
 }

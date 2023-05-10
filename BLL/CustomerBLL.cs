@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,7 @@ namespace BLL
         {
             get
             {
-                if (_intance == null)
-                {
-                    new CustomerBLL();
-                }
+                if (_intance == null) new CustomerBLL();
                 return _intance;
             }
             private set { }
@@ -33,11 +31,17 @@ namespace BLL
         public List<Customer> getALLCustomer() => dal.getALLCustomer();
 
         // thêm khách hàng
-        public bool addAndUpdateCustomer(Customer kh) => dal.addAndUpdateCustomer(kh);
+        public bool addAndUpdateCustomer(Customer kh)
+        {
+            return dal.addAndUpdateCustomer(kh);
+        }
 
         // xóa khách hàng
         public bool removeCustomer(int id) => dal.removeCustomer(id);
 
+        public Customer getCustomerByID(int id) => dal.getCustomerByID(id);
 
+        public List<Customer> searchCustomer(int? id, string name = null, string address = null,string phone = null)
+        => dal.searchCustomer(id, name, address, phone);
     }
 }

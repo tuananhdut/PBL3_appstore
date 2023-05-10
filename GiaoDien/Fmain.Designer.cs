@@ -171,7 +171,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Fmain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Fmain";
+            this.Text = "Phần mềm quản lý cửa hàng bán điện thoại";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

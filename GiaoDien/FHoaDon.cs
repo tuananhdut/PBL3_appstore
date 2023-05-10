@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using GiaoDien.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,10 +29,11 @@ namespace GiaoDien
             CustomerBLL bll = new CustomerBLL();
             cbbCustomerID.Items.AddRange(bll.getALLCustomer().ToArray());
         }
+        
         private void btAddInvoice_Click(object sender, EventArgs e)
         {
-            // xóa các dữ liệu trên form
-            setNullThongTinChung();
+
+             setNullThongTinChung();
 
             tbInvoiceDate.Text = DateTime.Now.ToString();
             tbEmployeeID.Text = acc.AccountID.ToString();
@@ -40,12 +42,13 @@ namespace GiaoDien
             // khóa các textbox
             tbInvoiceDate.Enabled = false;
             tbEmployeeID.Enabled = false;
-            tbEmployeeName.Enabled = false;
+           tbEmployeeName.Enabled = false;
 
             // khóa các chức năng 
-            btUpdateInvoice.Enabled = false;
+           btUpdateInvoice.Enabled = false;
             btPrintInvoice.Enabled = false;
             btChecking.Enabled = false;
+          
         }
 
     
@@ -100,6 +103,8 @@ namespace GiaoDien
             cbbCustomerID.Text = "";
             tbPhoneNumber.Text = "";
         }
+        private readonly List<
+            Object> _list = new List<Object>();
         private void btSaveInvoice_Click(object sender, EventArgs e)
         {
             // tạo khách hàng mới hoặc sử dụng lại khách hàng cũ
@@ -112,7 +117,7 @@ namespace GiaoDien
                 else
                 {
                     Customer kh = new Customer()
-                    {
+                   {
 
                         Address = tbAddressCustomer.Text,
                         FullName = tbCustomerName.Text,
@@ -156,11 +161,26 @@ namespace GiaoDien
                     Quantity = Convert.ToInt16(tbQuantityProduct.Text),
                     SalePrice = Convert.ToInt32(tbSale.Text)
                 };
+                double sotien = PriceBeforeDiscount.tinhTienGiamGia(int.Parse(tbSalePrice.Text),int.Parse(tbSale.Text), int.Parse(tbQuantityProduct.Text));
+                price += sotien;
+                textBox11.Text = price.ToString();
                 InvoiceDetailBLL bLL1 = new InvoiceDetailBLL();
                 bLL1.AddInvoiceDetail(CTHD);
                 MessageBox.Show("ok");
                 // hiển thị lên datagridview
-                dtgvInvoiceDetail.DataSource = bLL1.getListInvoiceDetailByInvoiceID(Convert.ToInt32(tbInvoiceID.Text));
+                // var object1 = PriceBeforeDiscount.changeInvoiceDetailToObject(CTHD);
+                Object show_info = new
+                {
+
+                    ten = acc.AccountID,
+                    gia = tbSalePrice.Text,
+                    giamgia =tbSalePrice.Text,
+                    soluong = tbQuantityProduct.Text,
+
+
+                };
+                _list.Add(show_info);
+                dtgvInvoiceDetail.Rows.Add(show_info);
             }
             // các textbox thông tin mặt hàng rỗng
             setNullThongTinMatHang();
@@ -173,6 +193,7 @@ namespace GiaoDien
             btAddInvoice.Enabled = true;
             btChecking.Enabled = true;
         }
+        public static double price = 0;
 
         private void btUpdateInvoice_Click(object sender, EventArgs e)
         {

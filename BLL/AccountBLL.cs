@@ -11,7 +11,23 @@ namespace BLL
 {
     public class AccountBLL
     {
-        public  string HashPassword(string password)
+        private AccountDAL dal;
+        public static AccountBLL _intance;
+        public static AccountBLL Intance
+        {
+            get
+            {
+                if (_intance == null) new AccountBLL();
+                return _intance;
+            }
+            private set { }
+        }
+        public AccountBLL()
+        {
+            dal = new AccountDAL();
+        }
+
+        public string HashPassword(string password)
         {
             byte[] salt = new byte[16];
             new RNGCryptoServiceProvider().GetBytes(salt);
@@ -46,25 +62,13 @@ namespace BLL
         }
         public Account CheckAccount(string usename, string passwork)
         {
-            AccountDAL db = new AccountDAL();
-            Account acc= db.getAccountByUsename(usename);
+            Account acc= dal.getAccountByUsename(usename);
             if (acc != null && VerifyPassword(passwork,acc.Password) && acc.Username==usename) return acc;
             return null;
         }
-        public List<Account> getALLAcount()
-        {
-            AccountDAL db = new AccountDAL();
-            return db.getALLAccount();
-        }
-        public void updateAndAddAccount(Account account)
-        {
-            AccountDAL db = new AccountDAL();
-            db.updateAndAddAccount(account);
-        }
-        public void removeAccountByID(int id)
-        {
-            AccountDAL db = new AccountDAL();
-            db.removeAccountByID(id);
-        }
+        public List<Account> getALLAcount() => dal.getALLAccount();
+        public void updateAndAddAccount(Account account) => dal.updateAndAddAccount(account);
+        public void removeAccountByID(int id) => dal.removeAccountByID(id);
+        public Account GetAccountByID(int id) => dal.GetAccountByID(id);
     }
 }

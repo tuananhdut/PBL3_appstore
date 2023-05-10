@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -46,7 +47,7 @@ namespace DAL
         {
             try
             {
-                Customer kh = db.Customers.Where(p => p.CustomerID == id).FirstOrDefault();
+                Customer kh = db.Customers.Find(id);
                 db.Customers.Remove(kh);
                 db.SaveChanges();
                 return true;
@@ -55,6 +56,37 @@ namespace DAL
                 return false;
             }
             
+        }
+        public Customer getCustomerByID(int? id)
+        {
+            return db.Customers.Where(p=>p.CustomerID==id).FirstOrDefault();
+        }
+
+        public List<Customer> getCustomersByNameOrAddressOrPhone(string str)
+        {
+            return db.Customers.Where(p => p.Address.Contains(str) || p.PhoneNumber.Contains(str)|| p.FullName.Contains(str)).ToList();
+        }
+        public List<Customer> searchCustomer(int? id, string name = null, string address = null, string phone = null)
+        {
+            List<Customer> li = new List<Customer>();
+            li = db.Customers.ToList();
+            if (id!=null)
+            {
+                li = li.Where(p => p.CustomerID == id).ToList();
+            } 
+            if (name != null)
+            {
+                li = li.Where(p => p.FullName.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            } 
+            if (address!= null)
+            {
+                li = li.Where(p => p.Address.IndexOf(address, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+            } 
+            if (phone != null)
+            {
+                li = li.Where(p => p.PhoneNumber==phone).ToList();
+            }
+            return li;
         }
     }
 }

@@ -33,6 +33,39 @@ namespace GiaoDien
             }
         }
 
+        private void btSearchCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerBLL customerBLL = new CustomerBLL();
+            dtgvCustomer.Rows.Clear();
+            int? id = null;
+            try
+            {
+                id = Convert.ToInt32(tbCustomerID.Text);
+            }
+            catch (Exception)
+            {
+            }
+            string name = tbCustomerName.Text;
+            string phone = tbCustomerPhoneNumber.Text;
+            string address = tbCustomerAddress.Text;
 
+            if (phone == "") phone = null;
+            if (name == "") name = null;
+            if (address == "") address = null;
+
+            foreach (var customer in customerBLL.searchCustomer(id, name, address, phone))
+            {
+                dtgvCustomer.Rows.Add(customer.CustomerID, customer.FullName,customer.PhoneNumber,customer.Address);
+            }
+        }
+
+        private void btResetCustomer_Click(object sender, EventArgs e)
+        {
+            tbCustomerID.Text = "";
+            tbCustomerName.Text = "";
+            tbCustomerAddress.Text = "";
+            tbCustomerPhoneNumber.Text = "";
+            dtgvCustomer.Rows.Clear();
+        }
     }
 }

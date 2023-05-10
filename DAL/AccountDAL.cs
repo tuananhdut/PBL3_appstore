@@ -9,7 +9,7 @@ namespace DAL
 {
     public class AccountDAL
     {
-        AppStore db;
+        private AppStore db;
         public static AccountDAL _intance;
         public static AccountDAL Intance
         {
@@ -55,6 +55,11 @@ namespace DAL
                 db.SaveChanges();
             }
 
+        }
+
+        public Account GetAccountByID(int id)
+        {
+            return db.Accounts.Find(id);
         }
     }
 }
