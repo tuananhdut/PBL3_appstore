@@ -55,16 +55,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgvCustomer = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbCustomerPhoneNumber = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbCustomerAddress = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.btSearchCustomer = new System.Windows.Forms.Button();
+            this.btResetCustomer = new System.Windows.Forms.Button();
+            this.tbCustomerName = new System.Windows.Forms.TextBox();
+            this.tbCustomerID = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -107,7 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -382,7 +386,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dtgvCustomer);
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -402,26 +406,60 @@
             this.label9.TabIndex = 5;
             this.label9.Text = "Danh Sách Tìm Kiếm";
             // 
-            // dataGridView2
+            // dtgvCustomer
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(20, 353);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(1146, 229);
-            this.dataGridView2.TabIndex = 4;
+            this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dtgvCustomer.Location = new System.Drawing.Point(20, 353);
+            this.dtgvCustomer.Name = "dtgvCustomer";
+            this.dtgvCustomer.RowHeadersWidth = 51;
+            this.dtgvCustomer.RowTemplate.Height = 24;
+            this.dtgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvCustomer.Size = new System.Drawing.Size(1146, 229);
+            this.dtgvCustomer.TabIndex = 4;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã Khách Hàng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Khách Hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 170;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Số Điện Thoại";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 170;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Địa Chỉ";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 315;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.tbCustomerPhoneNumber);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.tbCustomerAddress);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.btSearchCustomer);
+            this.groupBox2.Controls.Add(this.btResetCustomer);
+            this.groupBox2.Controls.Add(this.tbCustomerName);
+            this.groupBox2.Controls.Add(this.tbCustomerID);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -432,12 +470,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Tìm Kiếm";
             // 
-            // textBox6
+            // tbCustomerPhoneNumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(189, 206);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(220, 27);
-            this.textBox6.TabIndex = 27;
+            this.tbCustomerPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.tbCustomerPhoneNumber.Location = new System.Drawing.Point(189, 206);
+            this.tbCustomerPhoneNumber.Name = "tbCustomerPhoneNumber";
+            this.tbCustomerPhoneNumber.Size = new System.Drawing.Size(220, 27);
+            this.tbCustomerPhoneNumber.TabIndex = 27;
             // 
             // label11
             // 
@@ -449,12 +488,13 @@
             this.label11.TabIndex = 26;
             this.label11.Text = "Số Điện Thoại";
             // 
-            // textBox5
+            // tbCustomerAddress
             // 
-            this.textBox5.Location = new System.Drawing.Point(189, 152);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(220, 27);
-            this.textBox5.TabIndex = 25;
+            this.tbCustomerAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.tbCustomerAddress.Location = new System.Drawing.Point(189, 152);
+            this.tbCustomerAddress.Name = "tbCustomerAddress";
+            this.tbCustomerAddress.Size = new System.Drawing.Size(220, 27);
+            this.tbCustomerAddress.TabIndex = 25;
             // 
             // label10
             // 
@@ -466,37 +506,41 @@
             this.label10.TabIndex = 24;
             this.label10.Text = "Địa Chỉ";
             // 
-            // button3
+            // btSearchCustomer
             // 
-            this.button3.Location = new System.Drawing.Point(933, 184);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 39);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Tìm Kiếm";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btSearchCustomer.Location = new System.Drawing.Point(933, 184);
+            this.btSearchCustomer.Name = "btSearchCustomer";
+            this.btSearchCustomer.Size = new System.Drawing.Size(111, 39);
+            this.btSearchCustomer.TabIndex = 23;
+            this.btSearchCustomer.Text = "Tìm Kiếm";
+            this.btSearchCustomer.UseVisualStyleBackColor = true;
+            this.btSearchCustomer.Click += new System.EventHandler(this.btSearchCustomer_Click);
             // 
-            // button4
+            // btResetCustomer
             // 
-            this.button4.Location = new System.Drawing.Point(776, 184);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 39);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Làm Mới";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btResetCustomer.Location = new System.Drawing.Point(776, 184);
+            this.btResetCustomer.Name = "btResetCustomer";
+            this.btResetCustomer.Size = new System.Drawing.Size(106, 39);
+            this.btResetCustomer.TabIndex = 22;
+            this.btResetCustomer.Text = "Làm Mới";
+            this.btResetCustomer.UseVisualStyleBackColor = true;
+            this.btResetCustomer.Click += new System.EventHandler(this.btResetCustomer_Click);
             // 
-            // textBox7
+            // tbCustomerName
             // 
-            this.textBox7.Location = new System.Drawing.Point(189, 94);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(220, 27);
-            this.textBox7.TabIndex = 8;
+            this.tbCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.tbCustomerName.Location = new System.Drawing.Point(189, 94);
+            this.tbCustomerName.Name = "tbCustomerName";
+            this.tbCustomerName.Size = new System.Drawing.Size(220, 27);
+            this.tbCustomerName.TabIndex = 8;
             // 
-            // textBox8
+            // tbCustomerID
             // 
-            this.textBox8.Location = new System.Drawing.Point(189, 36);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(220, 27);
-            this.textBox8.TabIndex = 7;
+            this.tbCustomerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
+            this.tbCustomerID.Location = new System.Drawing.Point(189, 36);
+            this.tbCustomerID.Name = "tbCustomerID";
+            this.tbCustomerID.Size = new System.Drawing.Size(220, 27);
+            this.tbCustomerID.TabIndex = 7;
             // 
             // label15
             // 
@@ -882,7 +926,7 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvCustomer)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -930,16 +974,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgvCustomer;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbCustomerPhoneNumber;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbCustomerAddress;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button btSearchCustomer;
+        private System.Windows.Forms.Button btResetCustomer;
+        private System.Windows.Forms.TextBox tbCustomerName;
+        private System.Windows.Forms.TextBox tbCustomerID;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label12;
@@ -975,5 +1019,9 @@
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

@@ -70,6 +70,10 @@
             this.btUpdateInvoice = new System.Windows.Forms.Button();
             this.btSaveInvoice = new System.Windows.Forms.Button();
             this.btAddInvoice = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvInvoiceDetail)).BeginInit();
@@ -154,6 +158,7 @@
             // 
             // tbInvoiceDate
             // 
+            this.tbInvoiceDate.Enabled = false;
             this.tbInvoiceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F);
             this.tbInvoiceDate.Location = new System.Drawing.Point(196, 63);
             this.tbInvoiceDate.Name = "tbInvoiceDate";
@@ -296,7 +301,12 @@
             // dtgvInvoiceDetail
             // 
             this.dtgvInvoiceDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvInvoiceDetail.Location = new System.Drawing.Point(32, 115);
+            this.dtgvInvoiceDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
+            this.dtgvInvoiceDetail.Location = new System.Drawing.Point(32, 117);
             this.dtgvInvoiceDetail.Name = "dtgvInvoiceDetail";
             this.dtgvInvoiceDetail.RowHeadersWidth = 51;
             this.dtgvInvoiceDetail.RowTemplate.Height = 24;
@@ -508,6 +518,34 @@
             this.btAddInvoice.UseVisualStyleBackColor = true;
             this.btAddInvoice.Click += new System.EventHandler(this.btAddInvoice_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tên điện thoại";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Giá";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "số lượng";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Giảm Giá";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 250;
+            // 
             // FHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -573,5 +611,9 @@
         private System.Windows.Forms.ComboBox cbbInvoiceID;
         private System.Windows.Forms.TextBox tbEmployeeID;
         private System.Windows.Forms.ComboBox cbbProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

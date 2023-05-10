@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace DAL
 {
     public class AccountDAL
     {
-        AppStore db;
+        private AppStore db;
         public static AccountDAL _intance;
         public static AccountDAL Intance
         {
@@ -38,6 +39,27 @@ namespace DAL
         public List<Account> getALLAccount()
         {
             return db.Accounts.ToList();
+        }
+
+        public void updateAndAddAccount(Account account)
+        {
+            db.Accounts.AddOrUpdate(account);
+            db.SaveChanges();
+        }
+        public void removeAccountByID(int id)
+        {
+            Account account = db.Accounts.Find(id);
+            if (account != null)
+            {
+                db.Accounts.Remove(account);
+                db.SaveChanges();
+            }
+
+        }
+
+        public Account GetAccountByID(int id)
+        {
+            return db.Accounts.Find(id);
         }
     }
 }
