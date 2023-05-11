@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,8 @@ namespace GiaoDien
             setFormByAuthorization();
             loangDTGVCustomer();
             loangDTGVAccount();
+            ViewDanhMucDT();
+            SetCBB_DT();
           
         }
         private void setFormByAuthorization()
@@ -59,66 +62,136 @@ namespace GiaoDien
                 dtgv_KH.Rows.Add(customer.CustomerID, customer.FullName, customer.PhoneNumber, customer.Address);
             }
         }
-        private void KhoaThongTinDT()
-        {
-            cbbCategory_DT.Enabled = false;
-            tbCatagory_DT.Enabled = false;
-            cbbManufacturer_DT.Enabled = false;
-            tbManufacturer_DT.Enabled = false;
-            tbCostPrice_DT.Enabled = false;
-            tbQuantity_DT.Enabled = false;
-            tbSalePrice_DT.Enabled = false;
-            tbDescription_DT.Enabled = false;
-            tbProductName_DT.Enabled = false;
-        }
-
-        private void MoThongTinDT()
-        {
-            cbbCategory_DT.Enabled = true;
-            cbbManufacturer_DT.Enabled = true;
-            tbCostPrice_DT.Enabled = true;
-            tbQuantity_DT.Enabled = true;
-            tbSalePrice_DT.Enabled = true;
-            tbDescription_DT.Enabled = true;
-            tbProductName_DT.Enabled = true;
-        }
-        
-        private void btEdit_DT_Click(object sender, EventArgs e)
-        {
-            MoThongTinDT();
-        }
-
-
+       
+        // Danh mục điện thoại 
         private void setThongTinDT()
         {
-            tbProductID_DT.Text = "";
+            txtProductID_DT.Text = "";
             cbbCategory_DT.Text = "";
-            tbCatagory_DT.Text = "";
+            txtCatagory_DT.Text = "";
             cbbManufacturer_DT.Text = "";
-            tbManufacturer_DT.Text = "";
-            tbCostPrice_DT.Text = "";
-            tbQuantity_DT.Text = "";
-            tbSalePrice_DT.Text = "";
-            tbDescription_DT.Text = "";
-            tbProductName_DT.Text = "";
+            txtManufacturer_DT.Text = "";
+            txtCostPrice_DT.Text = "";
+            txtQuantity_DT.Text = "";
+            txtSalePrice_DT.Text = "";
+            txtDescription_DT.Text = "";
+            txtProductName_DT.Text = "";
         }
         private void btAdd_DT_Click(object sender, EventArgs e)
         {
-            setThongTinDT();
-            MoThongTinDT();
-            tbProductID_DT.Enabled = true;
-            tbProductName_DT.Enabled = true;
+            gb_TTDT.Enabled = true;
+            btDel_DT.Enabled = false;
+            btEdit_DT.Enabled = false;
+            btAdd_DT.Enabled = true;   
         }
 
         private void btExitDT_Click(object sender, EventArgs e)
         {
+            gb_TTDT.Enabled = false;
+            btDel_DT.Enabled = true;
+            btEdit_DT.Enabled = true;
+            btAdd_DT.Enabled = true;
             setThongTinDT();
-            MoThongTinDT();
+        }
+        // Lưu thông tin điện thoại 
+        private void btSave_DT_Click(object sender, EventArgs e)
+        {
+            if (txtProductID_DT.Text==""||txtProductName_DT.Text==""||txtCostPrice_DT.Text==""||txtSalePrice_DT.Text==""||txtQuantity_DT.Text ==""||txtDescription_DT.Text =="")
+            {
+                MessageBox.Show("Vui lòng nhập thông tin đầy đủ");
+            }else
+            {
+                Product save = new Product()
+                {
+                    ProductID = Convert.ToInt32(txtProductID_DT.Text),
+                    CategoryID = Convert.ToInt32(cbbCategory_DT.Text),
+                    ManufacturerID = Convert.ToInt32(cbbManufacturer_DT.Text),
+                    ProductName = Convert.ToString(txtProductName_DT.Text),
+                    CostPrice = Convert.ToInt32(txtCostPrice_DT.Text),
+                    SalePrice = Convert.ToInt32(txtSalePrice_DT.Text),
+                    Quantity = Convert.ToInt32(txtQuantity_DT.Text),
+                    Description = Convert.ToString (txtDescription_DT.Text),
+                };
+                ProductBLL bll = new ProductBLL();
+                bll.AddOrUpdateBLL(save);
+            }
+            gb_TTDT.Enabled = false;
+            btDel_DT.Enabled = true;
+            btEdit_DT.Enabled = true;
+            btAdd_DT.Enabled = true;
+            setThongTinDT();
+            ViewDanhMucDT();
+           
+
+        }
+        private void btDel_DT_Click(object sender, EventArgs e)
+        {
+            if (dtgvProduct_DT.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dtgvProduct_DT.CurrentRow;
+                int del = Convert.ToInt32(r.Cells[0].Value);
+                ProductBLL bll = new ProductBLL();
+                bll.DeleteBLL(del);
+            }else
+            {
+                MessageBox.Show("Vui lòng chọn dòng xóa");
+            }
+            ViewDanhMucDT();
+        }
+        private void btEdit_DT_Click(object sender, EventArgs e)
+        {
+            gb_TTDT.Enabled = true;
+            if (dtgvProduct_DT.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dtgvProduct_DT.CurrentRow;
+                int up = Convert.ToInt32(r.Cells[0].Value);
+                Product edit = new Product();
+                ProductBLL bll = new ProductBLL();
+                edit = bll.GetProductBLL(up);
+                txtProductID_DT.Text= Convert.ToString(edit.ProductID);
+                txtProductName_DT.Text = Convert.ToString(edit.ProductName);
+                cbbCategory_DT.Text = Convert.ToString(edit.CategoryID);
+                cbbManufacturer_DT.Text = Convert.ToString(edit.ManufacturerID);
+                txtCostPrice_DT.Text = Convert.ToString(edit.CostPrice);
+                txtSalePrice_DT.Text = Convert.ToString(edit.SalePrice);
+                txtQuantity_DT.Text = Convert.ToString(edit.Quantity);
+                txtDescription_DT.Text= Convert.ToString(edit.Description);
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng muốn cập nhật");
+            }
         }
 
-
+        private void SetCBB_DT()
+        {
+            CatagoryBLL cb1 = new CatagoryBLL();
+            cbbCategory_DT.Items.AddRange(cb1.getAllCBBCatagory().ToArray());
+            ManufactureBLL cb2 = new ManufactureBLL();
+            cbbManufacturer_DT.Items.AddRange(cb2.getAllCBBManuFacture().ToArray());
+        }
+        private void ViewDanhMucDT()
+        {
+            ProductBLL bll = new ProductBLL();
+            dtgvProduct_DT.DataSource = bll.GetProductsBLL();
+        }
+        private void cbbCategory_DT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(cbbCategory_DT.Text);
+            CatagoryBLL bll = new CatagoryBLL();
+            Category find =bll.getCategoryBLL(ID);
+            txtCatagory_DT.Text = find.CategoryName;
+        }
+        private void cbbManufacturer_DT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32(cbbManufacturer_DT.Text);
+            ManufactureBLL bll = new ManufactureBLL();
+            Manufacturer find =  bll.getManufactureBLL(ID);
+            txtManufacturer_DT.Text = find.ManufacturerName;
+        }
         private Form formshow;
-
+         
         private void openPanelBody(Form f1)
         {
             if (formshow != null)
@@ -447,5 +520,7 @@ namespace GiaoDien
                 MessageBox.Show("vui lòng nhập số");
             }
         }
+
+        
     }
 }

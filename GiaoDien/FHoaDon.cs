@@ -64,7 +64,7 @@ namespace GiaoDien
         private void setCBBProuctID()
         {
             ProductBLL bll = new ProductBLL();
-            cbbProductID.Items.AddRange(bll.getALLProduct().ToArray());
+            cbbProductID.Items.AddRange(bll.GetProductsBLL().ToArray());
         }
         private void cbbProductID_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -17,7 +17,7 @@ namespace DAL
             {
                 if (_intance == null)
                 {
-                    new ProductDAL();
+                    _intance = new ProductDAL();
                 }
                 return _intance;
             }
@@ -28,7 +28,7 @@ namespace DAL
             db = new AppStore();
         }
 
-        public List<Product> getALLProduct()
+        public List<Product> getProducts()
         {
            
                 return db.Products.ToList();  

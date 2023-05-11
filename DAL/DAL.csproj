@@ -10,11 +10,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DAL</RootNamespace>
     <AssemblyName>DAL</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,13 +57,16 @@
     <Compile Include="Account.cs" />
     <Compile Include="AccountDAL.cs" />
     <Compile Include="AppStore.cs" />
+    <Compile Include="CatagoryDAL.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="CBBItem.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerDAL.cs" />
     <Compile Include="InvoiceDAL.cs" />
     <Compile Include="InvoiceDetail.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceDetailDAL.cs" />
+    <Compile Include="ManufactureDAL.cs" />
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Product.cs" />
